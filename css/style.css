@@ -1,0 +1,195 @@
+/* Custom Styles for Dream Photography */
+
+/* Variables */
+:root {
+    --primary-color: #3b82f6;
+    --secondary-color: #1e40af;
+    --accent-color: #f59e0b;
+    --text-color: #1f2937;
+    --light-bg: #f3f4f6;
+    --dark-bg: #111827;
+}
+
+/* General Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+/* Navigation */
+.nav-link {
+    @apply text-gray-600 hover:text-primary-600 transition-colors duration-300;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.mobile-nav-link {
+    @apply text-xl font-medium text-gray-700 hover:text-primary-600 transition-colors duration-300;
+}
+
+/* Buttons */
+.btn-primary {
+    @apply px-6 py-3 bg-blue-600 text-white rounded-lg font-medium transition-all duration-300;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+}
+
+.btn-primary:hover {
+    @apply bg-blue-700 transform -translate-y-1;
+    box-shadow: 0 6px 8px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+    @apply px-6 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-lg font-medium transition-all duration-300;
+}
+
+.btn-secondary:hover {
+    @apply bg-blue-600 text-white transform -translate-y-1;
+}
+
+/* Form Elements */
+.form-input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300;
+}
+
+/* Service Cards */
+.service-card {
+    @apply bg-white p-6 rounded-xl shadow-lg transition-all duration-300;
+    transform: translateY(0);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icon-wrapper {
+    @apply w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6;
+    color: var(--primary-color);
+}
+
+/* Feature Cards */
+.feature-card {
+    @apply bg-white p-6 rounded-xl shadow-md text-center transition-all duration-300;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Social Links */
+.social-link {
+    @apply w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white transition-all duration-300;
+}
+
+.social-link:hover {
+    @apply bg-blue-600 transform -translate-y-1;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Three.js Background */
+#hero-background {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+}
+
+/* Portfolio Grid */
+.portfolio-item {
+    @apply relative overflow-hidden rounded-lg;
+    aspect-ratio: 1;
+}
+
+.portfolio-item img {
+    @apply w-full h-full object-cover transition-transform duration-500;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-overlay {
+    @apply absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 flex items-center justify-center;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+/* Testimonial Slider */
+.testimonial-slider {
+    @apply relative overflow-hidden;
+}
+
+.testimonial-card {
+    @apply bg-white p-6 rounded-xl shadow-lg;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        @apply px-4;
+    }
+    
+    h1 {
+        @apply text-4xl;
+    }
+    
+    h2 {
+        @apply text-3xl;
+    }
+}
+
+/* Loading Animation */
+#preloader {
+    transition: opacity 0.5s ease-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+} 
